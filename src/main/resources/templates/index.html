@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>用户名</td>
+            <td>密码</td>
+            <td>权限</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="user,var:${pageInfo.list}">
+            <td th:text="${var.count}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.role}"></td>
+            <td><a th:href="">修改</a>
+                <a th:href="">删除</a></td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
